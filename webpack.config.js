@@ -39,6 +39,9 @@ const productionConfig = merge([
       name: "images/[name].[ext]",
     },
   }),
+
+  parts.generateSourceMaps({ type: "source-map" }),
+
 ]);
 
 const developmentConfig = merge([
@@ -58,7 +61,10 @@ const developmentConfig = merge([
 
   parts.loadCSS(),
 
-  parts.loadImages()
+  parts.loadImages(),
+
+  parts.generateSourceMaps({ type: 'cheap-source-map' })
+
 ]);
 
 module.exports = mode => {
