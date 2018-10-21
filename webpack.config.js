@@ -11,6 +11,8 @@ const commonConfig = merge([
       style: './src/main.css',
     },
   },
+
+  parts.loadFonts()
 ]);
 
 const productionConfig = merge([
@@ -31,7 +33,7 @@ const productionConfig = merge([
   parts.loadImages({
     options: {
       limit: 200,
-      name: "[name].[ext]",
+      name: "images/[name].[ext]",
     },
   }),
 ]);

@@ -76,3 +76,20 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
     ],
   },
 });
+
+exports.loadFonts = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            limit: 20000,
+            name: "fonts/[name].[ext]",
+          },
+        },
+      },
+    ],
+  },
+});

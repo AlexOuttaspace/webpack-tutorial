@@ -3,7 +3,19 @@ body {
   border-radius: 1em;
   display: grid;
 
-  background-image: url("./logo.png");
+  background-image: url("assets/images/logo.png");
   background-repeat: no-repeat;
   background-position: center;
+
+  font-family: 'Avenir Book';
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Avenir Book';
+	src: url('assets/fonts/Avenir-Book.eot'),
+		url('assets/fonts/Avenir-Book.woff') format('woff'),
+		url('assets/fonts/Avenir-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
