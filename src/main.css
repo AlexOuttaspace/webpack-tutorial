@@ -2,9 +2,8 @@ body {
   color: red;
   border-radius: 1em;
   display: grid;
-}
 
-
-input::placeholder {
-  color: red;
+  background-image: url("./logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -26,7 +26,14 @@ const productionConfig = merge([
 
   parts.extractCSS({
     use: ['css-loader', parts.autoprefix(), 'sass-loader']
-  })
+  }),
+
+  parts.loadImages({
+    options: {
+      limit: 200,
+      name: "[name].[ext]",
+    },
+  }),
 ]);
 
 const developmentConfig = merge([
@@ -44,7 +51,9 @@ const developmentConfig = merge([
     ],
   },
 
-  parts.loadCSS()
+  parts.loadCSS(),
+
+  parts.loadImages()
 ]);
 
 module.exports = mode => {
