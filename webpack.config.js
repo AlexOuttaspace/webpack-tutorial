@@ -13,10 +13,6 @@ const commonConfig = merge([
   },
 
   parts.loadCSS(),
-
-  parts.loadImages(),
-
-  parts.useCopyPlugin()
 ]);
 
 const productionConfig = merge([]);

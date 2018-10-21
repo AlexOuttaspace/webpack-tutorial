@@ -23,27 +23,3 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
     ],
   },
 })
-
-exports.loadImages = () => ({
-  module: {
-    rules: [
-      {
-        test: /\.(png)$/,
-        use: 'file-loader'
-      },
-    ],
-  },
-})
-
-
-exports.useCopyPlugin = () => ({
-    plugins: [
-      new CopyWebpackPlugin([
-        {
-          from: './src/assets',
-          to: './assets'
-        }
-      ])
-    ],
-})
-
