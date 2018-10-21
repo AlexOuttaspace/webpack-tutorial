@@ -48,9 +48,3 @@ exports.extractCSS = ({ include, exclude, use = [] }) => {
     plugins: [plugin],
   };
 };
-
-exports.cssEntryPlugin = () => ({
-  plugins: [
-    
-  ]
-})
