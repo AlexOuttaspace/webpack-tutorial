@@ -25,7 +25,7 @@ const productionConfig = merge([
   },
 
   parts.extractCSS({
-    use: ['css-loader', 'sass-loader']
+    use: ['css-loader', parts.autoprefix(), 'sass-loader']
   })
 ]);
 
