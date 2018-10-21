@@ -93,3 +93,21 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
     ],
   },
 });
+
+exports.loadJavaScript = ({ include, exclude } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include,
+        exclude,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+    ],
+  },
+});

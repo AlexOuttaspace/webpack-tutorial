@@ -24,7 +24,10 @@ const productionConfig = merge([
       }),
       new HtmlWebpackExcludeAssetsPlugin()
     ],
+
   },
+
+  parts.loadJavaScript({ exclude:[/node_modules/]}),
 
   parts.extractCSS({
     use: ['css-loader', parts.autoprefix(), 'sass-loader']
