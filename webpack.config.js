@@ -27,6 +27,20 @@ const productionConfig = merge([
 
   },
 
+  {
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          commons: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendor",
+            chunks: "initial",
+          },
+        }
+      },
+    },
+  },
+
   parts.loadJavaScript({ exclude:[/node_modules/]}),
 
   parts.extractCSS({
