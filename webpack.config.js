@@ -1,6 +1,7 @@
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
+const path = require('path')
 
 const parts = require("./webpack.parts");
 
@@ -28,6 +29,14 @@ const productionConfig = merge([
   },
 
   {
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      chunkFilename: "[name].[chunkhash:4].js",
+      filename: "[name].[chunkhash:4].js",
+    },
+  },
+
+  {
     optimization: {
       splitChunks: {
         cacheGroups: {
@@ -37,6 +46,10 @@ const productionConfig = merge([
             chunks: "initial",
           },
         }
+      },
+
+      runtimeChunk: {
+        name: "manifest",
       },
     },
   },
@@ -75,7 +88,13 @@ const developmentConfig = merge([
 
   parts.loadCSS(),
 
-  parts.loadImages(),
+  parts.loadImages({
+    options: {
+      limit: 15000,
+      name: "[name].[hash:4].[ext]",
+
+    },
+  }),
 
   parts.generateSourceMaps({ type: 'cheap-source-map' })
 
